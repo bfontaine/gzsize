@@ -1,4 +1,6 @@
 gzsize
+man/*.1
+man/*.html
 *~
 *.o
 *.dSYM
