@@ -1,7 +1,7 @@
 #ifndef _GZSIZE_H
 #define _GZSIZE_H 1
 
-#define SIZE_SUFFIXES "bkMGTP"
+#define SIZE_SUFFIXES "\0kMGTP"
 #define SIZE_SUFFIXES_COUNT 6
 
 /**

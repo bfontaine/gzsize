@@ -29,15 +29,15 @@ void print_size(long size, char human) {
         int i;
 
         if (size < 1024 || !human) {
-                printf("%ld bytes\n", size);
+                printf("%ld\n", size);
                 return;
         }
 
         i = 0;
-        while (size > 1024 && i < SIZE_SUFFIXES_COUNT) {
+        do {
                 i++;
                 size /= 1024;
-        }
+        } while (size > 1024 && i < SIZE_SUFFIXES_COUNT);
 
         printf("%ld%c\n", size, SIZE_SUFFIXES[i]);
 }
