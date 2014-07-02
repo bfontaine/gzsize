@@ -1,7 +1,5 @@
 gzsize
 *~
-*.1
-*.html
 *.o
 *.dSYM
 *.gz
