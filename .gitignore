@@ -1,0 +1,7 @@
+gzsize
+*~
+*.o
+*.dSYM
+*.gz
+.*.sw*
+.DS_Store
