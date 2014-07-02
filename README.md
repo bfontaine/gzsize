@@ -9,7 +9,7 @@ you can test any file size without worrying for your disk usage.
 ## Install
 
     git clone https://github.com/bfontaine/gzsize.git
-    cd homer
+    cd gzsize
     [sudo] make install
 
 Dependencies :
