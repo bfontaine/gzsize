@@ -12,7 +12,14 @@ you can test any file size without worrying for your disk usage.
     cd homer
     [sudo] make install
 
-
 Dependencies :
 
 * `zlib`
+
+## Usage
+
+    $ gzsize <file.gz>
+
+Check also the [man page][man].
+
+[man]: https://bfontaine.github.io/gzsize/
