@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
 #include <zlib.h>
@@ -57,33 +55,4 @@ long get_size(int fd) {
 
         inflateEnd(&strm);
         return strm.total_out;
-}
-
-
-
-int main(int argc, char **argv) {
-
-        int fd;
-        long size;
-
-        if (argc != 2) {
-                printf("Usage:\n\t%s <file>\n", argv[0]);
-                return -1;
-        }
-
-        fd = open(argv[1], O_RDONLY);
-        if (fd == -1) {
-                perror("open");
-                return -1;
-        }
-
-        size = get_size(fd);
-
-        if (size < 0) {
-                return size;
-        }
-
-        printf("%ld bytes.\n", size);
-
-        return 0;
 }
