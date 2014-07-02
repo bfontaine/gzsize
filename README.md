@@ -1,6 +1,6 @@
-# gzsize
+# GZSize
 
-`gzsize` is a lightweight tool to measure the decompressed size of a GZip’d
+**GZSize** is a lightweight tool to measure the decompressed size of a GZip’d
 file.
 
 It works by decompressing it on the fly but doesn’t write the data which means
