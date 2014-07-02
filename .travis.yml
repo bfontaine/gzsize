@@ -1,0 +1,10 @@
+language: c
+install: sudo make install
+script:
+  - sudo make test
+  - sudo make test-install
+notifications:
+  email: false
+compiler:
+  - clang
+  - gcc

@@ -6,6 +6,7 @@ BINPREFIX ?= $(PREFIX)/bin
 MANPREFIX ?= $(PREFIX)/share/man/man1
 
 SRC:=src
+TESTS_RUNNER=./test/test.sh
 
 SRCS=$(wildcard src/*.c)
 OBJS=$(SRCS:.c=.o)
@@ -18,7 +19,16 @@ BIN:=gzsize
 CFLAGS=-Wall -Wextra -Wundef -Wpointer-arith -std=gnu99
 LDFLAGS=-lz
 
-.PHONY: clean cleanall
+CPPCHECK_VER:=$(shell cppcheck --version 2>/dev/null)
+ifdef CPPCHECK_VER
+CPPCHECK=cppcheck \
+	--enable=warning,style \
+	--language=c -q
+else
+CPPCHECK=\#
+endif
+
+.PHONY: test
 
 all: $(BIN) docs
 
@@ -41,6 +51,17 @@ clean:
 	rm -f $(BIN)
 	rm -rf *.tmp
 	rm -f man/*.1
+
+test: $(BIN)
+	@# avoid a failed build because cppcheck doesn't exist or is a wrong
+	@# version
+	$(CPPCHECK) $(SRC) || true
+	@GZSIZE=$${PWD}/$(BIN) $(TESTS_RUNNER)
+
+test-install:
+	@# this is used on CI server. 'gzsize' has been installed just before so
+	@# we don't have to depend on the 'install' target here.
+	@GZSIZE=$(BINPREFIX)/$(BIN) $(TESTS_RUNNER)
 
 install: $(BIN) docs
 	@mkdir -p $(BINPREFIX)
