@@ -35,4 +35,4 @@ Bugs should be reported at <https://github.com/bfontaine/gzsize/issues>.
 
 ## SEE ALSO
 
-The projet homepage is at <https://github.com/bfontaine/gzsize>.
+The project homepage is at <https://github.com/bfontaine/gzsize>.
