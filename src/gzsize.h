@@ -2,7 +2,7 @@
 #define _GZSIZE 1
 
 enum {
-        CHUNK = 16384
+        CHUNK = 1048576
 };
 
 /**
