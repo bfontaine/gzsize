@@ -7,7 +7,7 @@
 
 
 long get_size(int fd) {
-        int ret, flush;
+        int ret;
         z_stream strm;
         unsigned char in[CHUNK];
         unsigned char out[CHUNK];
@@ -25,6 +25,8 @@ long get_size(int fd) {
         }
 
         do {
+                int flush;
+
                 strm.avail_in = read(fd, in, CHUNK);
                 if (strm.avail_in == (uInt)-1) {
                         perror("read");

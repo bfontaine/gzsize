@@ -8,7 +8,7 @@ size=$(wc -c $FILE | awk '{print $1}')
 gzip $FILE
 
 res=$($GZSIZE ${FILE}.gz)
-if [ "$res" -ne "$size"]; then
+if [ "$res" -ne "$size" ]; then
     exit 1
 fi
 rm -f ${FILE}.gz

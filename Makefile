@@ -16,14 +16,15 @@ MAN_PAGES=$(MANS:.md=.1)
 
 BIN:=gzsize
 
-CFLAGS=-Wall -Wextra -Wundef -Wpointer-arith -std=gnu99
+CFLAGS=-Wall -Wextra -Wundef -Wpointer-arith -std=c99
 LDFLAGS=-lz
 
 CPPCHECK_VER:=$(shell cppcheck --version 2>/dev/null)
 ifdef CPPCHECK_VER
-CPPCHECK=cppcheck \
-	--enable=warning,style \
-	--language=c -q
+CPPCHECK=cppcheck -q \
+	--enable=warning,style,performance \
+	--std=c99 \
+	--language=c
 else
 CPPCHECK=\#
 endif
