@@ -16,7 +16,7 @@ MAN_PAGES=$(MANS:.md=.1)
 
 BIN:=gzsize
 
-CFLAGS=-Wall -Wextra -Wundef -Wpointer-arith -std=c99
+CFLAGS=-Wall -Wextra -Wundef -Wpointer-arith -std=gnu99
 LDFLAGS=-lz
 
 CPPCHECK_VER:=$(shell cppcheck --version 2>/dev/null)
