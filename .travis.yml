@@ -1,4 +1,12 @@
 language: c
+before_install:
+  - which $CC
+  - $CC --version
+  # Fix an issue with clang not available system-wide; causing a failure on
+  # 'sudo make install'.
+  # See https://github.com/travis-ci/travis-ci/issues/2607
+  # and https://github.com/kerolasa/lelux-utiliteetit/commit/ac54004f4b319040ed24232b8cd70d3abaa7beba
+  - export CC=`which $CC`
 install: sudo make install
 script:
   - sudo make test
