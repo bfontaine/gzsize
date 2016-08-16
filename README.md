@@ -18,7 +18,7 @@ Dependencies :
 
 ## Usage
 
-    $ gzsize <file.gz>
+    $ gzsize <file.gz> [<file.gz> ...]
 
 Check also the [man page][man].
 

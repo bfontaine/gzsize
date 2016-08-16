@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 
-`gzsize` <file>
+`gzsize` <file> [<file> ...]
 
 ## DESCRIPTION
 
