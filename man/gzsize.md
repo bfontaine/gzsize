@@ -6,7 +6,8 @@
 
 ## DESCRIPTION
 
-Measure the uncompressed size of a GZipped file.
+Print the uncompressed size of a GZipped file. If multiple files are given,
+print the total size of all of them.
 
 ## OPTIONS
 
