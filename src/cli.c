@@ -10,7 +10,7 @@
 
 int print_help(char *exe) {
         printf("Usage:\n"
-               "\t%s [<options>] <file>\n"
+               "\t%s [<options>] <file> [<file> ...]\n"
                "\n"
                "Options:\n"
                "\t-h: show this help and exit\n"
@@ -44,8 +44,8 @@ void print_size(long size, char human) {
 
 int main(int argc, char **argv) {
 
-        int fd;
-        long size;
+        int fd, fsize;
+        unsigned long long size;
 
         int optch;
         extern int opterr;
@@ -74,16 +74,22 @@ int main(int argc, char **argv) {
                 return print_help(argv[0]);
         }
 
-        fd = open(argv[optind], O_RDONLY);
-        if (fd == -1) {
-                perror("open");
-                return -1;
-        }
+        size = 0;
 
-        size = get_size(fd);
+        for (int i=optind; i<argc; ++i) {
+                fd = open(argv[i], O_RDONLY);
+                if (fd == -1) {
+                        perror("open");
+                        return -1;
+                }
 
-        if (size < 0) {
-                return size;
+                fsize = get_size(fd);
+
+                if (fsize < 0) {
+                        return fsize;
+                }
+
+                size += fsize;
         }
 
         print_size(size, human_readable_flag);
