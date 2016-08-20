@@ -85,6 +85,8 @@ int main(int argc, char **argv) {
 
                 fsize = get_size(fd);
 
+                close(fd);
+
                 if (fsize < 0) {
                         return fsize;
                 }
