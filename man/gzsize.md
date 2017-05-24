@@ -15,7 +15,7 @@ print the total size of all of them.
     Print the help and exit
 
   * `-H`:
-    Output an human-readable size
+    Output a human-readable size
 
   * `-v`:
     Print the version and exit

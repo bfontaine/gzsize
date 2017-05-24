@@ -14,7 +14,7 @@ int print_help(char *exe);
 int print_version(void);
 
 /**
- * Print a size. `human` should be set to `1` for an human-readable string, `0`
+ * Print a size. `human` should be set to `1` for a human-readable string, `0`
  * for the raw bytes count.
  **/
 void print_size(long size, char human);
