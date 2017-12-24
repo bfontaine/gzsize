@@ -20,7 +20,7 @@ long get_size(int fd) {
 
         ret = inflateInit2(&strm, 32+MAX_WBITS);
         if (ret != Z_OK) {
-                printf("Initialization error (%d)\n", ret);
+                fprintf(stderr, "Initialization error (%d)\n", ret);
                 return ret;
         }
 
@@ -46,7 +46,7 @@ long get_size(int fd) {
                         ret = inflate(&strm, flush);
 
                         if (ret < 0 && ret != Z_BUF_ERROR) {
-                                printf("Error: %s (%d)\n", strm.msg, ret);
+                                fprintf(stderr, "Error: %s (%d)\n", strm.msg, ret);
                                 inflateEnd(&strm);
                                 return -1;
                         }
