@@ -65,6 +65,7 @@ int main(int argc, char **argv) {
                         return print_version();
                 case '?':
                         /* wrong option or missing argument */
+                        print_help(argv[0]);
                         exit(EXIT_FAILURE);
                 }
         }
