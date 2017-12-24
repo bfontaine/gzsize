@@ -1,5 +1,11 @@
 # GZSize Changelog
 
+## 0.1.2 (2017/12/24)
+
+* Print errors on stderr instead of stdout
+* Print the help when passed a wrong option
+* Fix a typo in the doc
+
 ## 0.1.1 (2016/08/20)
 
 * Close files when done. When passing a lot of files as arguments one would get
