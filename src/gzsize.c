@@ -6,7 +6,7 @@
 #include "gzsize.h"
 
 
-long get_size(int fd) {
+long long get_size(int fd) {
         int ret;
         z_stream strm;
         unsigned char in[CHUNK];

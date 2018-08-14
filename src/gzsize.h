@@ -8,6 +8,6 @@ enum {
 /**
  * Decompress an input stream on /dev/null and compute its decompressed size.
  **/
-long get_size(int fd);
+long long get_size(int fd);
 
 #endif
