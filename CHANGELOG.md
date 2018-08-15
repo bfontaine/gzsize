@@ -1,5 +1,11 @@
 # GZSize Changelog
 
+## 0.1.3 (2018/08/15)
+
+* Fix overflow of reported size above ~2GB (contributed by [@julianoes][])
+
+[@julianoes]: https://github.com/julianoes
+
 ## 0.1.2 (2017/12/24)
 
 * Print errors on stderr instead of stdout
