@@ -8,6 +8,8 @@ you can test any file size without worrying for your disk usage.
 
 ## Install
 
+### From source
+
     git clone https://github.com/bfontaine/gzsize.git
     cd gzsize
     [sudo] make install
@@ -15,6 +17,13 @@ you can test any file size without worrying for your disk usage.
 Dependencies :
 
 * `zlib`
+
+### With [Homebrew][]/[Linuxbrew][]
+
+    brew install bfontaine/utils/gzsize
+
+[Homebrew]: https://brew.sh/
+[Linuxbrew]: http://linuxbrew.sh/
 
 ## Usage
 
