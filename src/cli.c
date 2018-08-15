@@ -44,7 +44,8 @@ void print_size(long size, char human) {
 
 int main(int argc, char **argv) {
 
-        int fd, fsize;
+        int fd;
+        long long fsize;
         unsigned long long size;
 
         int optch;
