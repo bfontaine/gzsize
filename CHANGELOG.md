@@ -1,5 +1,9 @@
 # GZSize Changelog
 
+## 0.1.4 (2019/09/16)
+
+* Read on stdin if `-` is passed
+
 ## 0.1.3 (2018/08/15)
 
 * Fix overflow of reported size above ~2GB (contributed by [@julianoes][])
