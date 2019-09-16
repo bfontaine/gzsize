@@ -12,6 +12,8 @@ int print_help(char *exe) {
         printf("Usage:\n"
                "\t%s [<options>] <file> [<file> ...]\n"
                "\n"
+               "If <file> is \"-\", it reads from stdin.\n"
+               "\n"
                "Options:\n"
                "\t-h: show this help and exit\n"
                "\t-H: human-readable size output\n"
@@ -44,7 +46,7 @@ void print_size(long size, char human) {
 
 int main(int argc, char **argv) {
 
-        int fd;
+        int fd, should_close;
         long long fsize;
         unsigned long long size;
 
@@ -79,15 +81,23 @@ int main(int argc, char **argv) {
         size = 0;
 
         for (int i=optind; i<argc; ++i) {
-                fd = open(argv[i], O_RDONLY);
-                if (fd == -1) {
-                        perror("open");
-                        return -1;
+                should_close = 1;
+                if (strcmp(argv[i], "-") == 0) {
+                        fd = STDIN_FILENO;
+                        should_close = 0;
+                } else {
+                        fd = open(argv[i], O_RDONLY);
+                        if (fd == -1) {
+                                perror("open");
+                                return -1;
+                        }
                 }
 
                 fsize = get_size(fd);
 
-                close(fd);
+                if (should_close) {
+                        close(fd);
+                }
 
                 if (fsize < 0) {
                         return fsize;

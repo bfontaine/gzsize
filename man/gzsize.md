@@ -7,24 +7,27 @@
 ## DESCRIPTION
 
 Print the uncompressed size of a GZipped file. If multiple files are given,
-print the total size of all of them.
+print the total size of all of them. `-` reads on stdin.
 
 ## OPTIONS
 
   * `-h`:
-    Print the help and exit
+    Print the help and exit.
 
   * `-H`:
-    Output a human-readable size
+    Output a human-readable size, like "263M".
 
   * `-v`:
-    Print the version and exit
+    Print the version and exit.
 
 
 ## EXAMPLES
 
-  * Check a file:
+  * Get the uncompressed size of a file:
     `gzsize myfile.gz`
+
+  * Get the uncompressed size of stdin:
+    `curl https://example.com/somefile.gz | gzsize -`
 
 ## AUTHOR
 

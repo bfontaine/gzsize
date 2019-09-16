@@ -18,16 +18,16 @@ Dependencies :
 
 * `zlib`
 
-### With [Homebrew][]/[Linuxbrew][]
+### With [Homebrew][]
 
     brew install bfontaine/utils/gzsize
 
 [Homebrew]: https://brew.sh/
-[Linuxbrew]: http://linuxbrew.sh/
 
 ## Usage
 
     $ gzsize <file.gz> [<file.gz> ...]
+    $ gzsize -  # reads from stdin
 
 Check also the [man page][man].
 

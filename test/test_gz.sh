@@ -11,4 +11,8 @@ res=$($GZSIZE ${FILE}.gz)
 if [ "$res" -ne "$size" ]; then
     exit 1
 fi
+res=$(cat ${FILE}.gz | $GZSIZE -)
+if [ "$res" -ne "$size" ]; then
+    exit 1
+fi
 rm -f ${FILE}.gz
